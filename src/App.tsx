@@ -1,28 +1,29 @@
-import React, { useState } from 'react'
-import './App.css'
+import { useState } from 'react'
 import Weather from './components/Weather'
+import { COORDINATES, TYPES_VARIABLES_FOR_API } from './constants'
 
-function App() {
-    const [variables, setVariables] = useState([
-        'rain_sum',
-        'snowfall_sum',
-        'precipitation_hours',
-        'shortwave_radiation_sum',
-    ])
+import styles from './App.module.css'
+
+const App = () => {
+    const [variables, setVariables] = useState(TYPES_VARIABLES_FOR_API)
+
+    const addVariables = (e: React.FormEvent<HTMLInputElement>) => {
+        variables.push((e.target as HTMLInputElement).value)
+    }
 
     return (
-        <div className="main">
-            <label>
-                <input
-                    className="main__input"
-                    type="text"
-                    placeholder="Введите данные"
-                    onInput={(e) => {
-                        variables.push((e.target as HTMLInputElement).value)
-                    }}
-                />
-            </label>
-            <Weather lat={55.751244} long={37.618423} variables={variables} />
+        <div className={styles.main}>
+            <input
+                className={styles.main__input}
+                type="text"
+                placeholder="Введите данные"
+                onInput={(e) => addVariables(e)}
+            />
+            <Weather
+                lat={COORDINATES.LAT}
+                long={COORDINATES.LONG}
+                variables={variables}
+            />
         </div>
     )
 }

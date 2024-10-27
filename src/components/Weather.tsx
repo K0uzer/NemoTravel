@@ -60,17 +60,16 @@ const Weather: React.FC<WeatherProps> = ({ lat, long, variables }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {weather &&
-                                weather.daily.time.map((item) => (
-                                    <tr key={item}>
-                                        <td>{item}</td>
-                                        {variables.map((variable, index) => (
-                                            <td key={variable}>
-                                                {weather.daily[variable][index]}
-                                            </td>
-                                        ))}
-                                    </tr>
-                                ))}
+                            {weather?.daily.time.map((item) => (
+                                <tr key={item}>
+                                    <td>{item}</td>
+                                    {variables.map((variable, index) => (
+                                        <td key={variable}>
+                                            {weather.daily[variable][index]}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </>

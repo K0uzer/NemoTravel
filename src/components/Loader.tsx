@@ -1,7 +1,6 @@
-import React from 'react'
 import styles from './Loader.module.css'
 
-const Loader: React.FC = () => {
+const Loader = () => {
     return (
         <div className={styles.loading}>
             <div className={styles.spinner}></div>
