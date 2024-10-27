@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main__input {
+    width: 250px;
+    height: 25px;
+    margin-top: 10px;
+}
