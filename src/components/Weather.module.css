@@ -1,0 +1,25 @@
+.table {
+    width: 80vw;
+    text-align: center;
+    margin-top: 10px;
+    border: 2px solid saddlebrown;
+    border-collapse: collapse;
+}
+
+thead > tr {
+    background-color: #eeeb3e45;
+}
+
+td {
+    height: 45px;
+    border: 2px solid saddlebrown;
+}
+
+tbody > tr {
+    transition: 0.4s;
+}
+
+tbody > tr:hover {
+    transition: 0.4s;
+    background-color: rgb(225, 225, 225);
+}
