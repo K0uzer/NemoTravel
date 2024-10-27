@@ -1,7 +1,4 @@
 interface Daily {
-    rain_sum: number[]
-    snowfall_sum: number[]
-    time: string[]
     [key: string]: number[] | string[]
 }
 
